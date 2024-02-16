@@ -8,22 +8,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "secretaries")
-@Entity
+@Table(name = "secretaries") // Define o nome da tabela no banco de dados
+@Entity // Indica que esta classe é uma entidade JPA
 public class Secretary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // Chave primária da entidade
 
     @Column(nullable = false)
-    private String name;
+    private String name; // Nome do secretário
 
     @Column(nullable = false)
-    private String email;
+    private String email; // E-mail do secretário
 
     @Column(nullable = false)
-    private String password;
-
-
+    private String password; // Senha do secretário
 }

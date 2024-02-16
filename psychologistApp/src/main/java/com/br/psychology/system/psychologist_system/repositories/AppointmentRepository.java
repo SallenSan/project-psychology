@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Repository
+@Repository // Indica que esta interface é um repositório Spring
 public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
+  // Método para verificar se já existe um agendamento com a mesma data e hora
+  // para um psicólogo diferente do fornecido e com um ID diferente
   boolean existsByDateHourAndPsychologistIdNot(LocalDateTime dateTime, Psychologist psychologist, Long id);
 }

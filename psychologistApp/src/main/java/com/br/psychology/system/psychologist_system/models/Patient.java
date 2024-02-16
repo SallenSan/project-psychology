@@ -6,25 +6,26 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data //para criar os getters e setters e o tostring
-@AllArgsConstructor //para criar construtor com as propriedades da entidade
-@NoArgsConstructor //para criar um construtor vazio
-@Builder //para ajudar na criação de objetos cliente
-@Entity // para informar que essa classe trata-se de uma entidade
+@Data // Gera automaticamente getters, setters e toString
+@AllArgsConstructor // Cria um construtor com todos os argumentos
+@NoArgsConstructor // Cria um construtor vazio
+@Builder // Auxilia na construção de objetos
+@Entity // Indica que essa classe é uma entidade JPA
 public class Patient {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id // Indica que esta propriedade é a chave primária da entidade
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Define a estratégia de geração de valor para a chave primária
+    private Long id; // Chave primária da entidade
 
-    @Column(nullable = false)
-    private String name;
+    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
+    private String name; // Nome do paciente
 
-    @Column(nullable = false)
-    private String email;
+    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
+    private String email; // E-mail do paciente
 
-    @Column(nullable = false)
-    private String phone;
+    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
+    private String phone; // Número de telefone do paciente
 
-    private String symptoms;
+    private String symptoms; // Sintomas do paciente
+
 }
