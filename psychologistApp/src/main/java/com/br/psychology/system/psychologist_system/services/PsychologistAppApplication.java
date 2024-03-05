@@ -1,4 +1,4 @@
-package com.br.psychology.system.psychologist_system;
+package com.br.psychology.system.psychologist_system.services;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
