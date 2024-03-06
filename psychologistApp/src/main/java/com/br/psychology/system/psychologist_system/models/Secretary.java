@@ -24,4 +24,5 @@ public class Secretary {
 
     @Column(nullable = false)
     private String password; // Senha do secretário
+    private String role;
 }

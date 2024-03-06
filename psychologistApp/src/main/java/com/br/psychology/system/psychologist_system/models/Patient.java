@@ -5,27 +5,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
-@Data // Gera automaticamente getters, setters e toString
-@AllArgsConstructor // Cria um construtor com todos os argumentos
-@NoArgsConstructor // Cria um construtor vazio
-@Builder // Auxilia na construção de objetos
-@Entity // Indica que essa classe é uma entidade JPA
+import java.util.List;
+
+
 public class Patient {
 
-    @Id // Indica que esta propriedade é a chave primária da entidade
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Define a estratégia de geração de valor para a chave primária
-    private Long id; // Chave primária da entidade
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
-    private String name; // Nome do paciente
+    @Column(name = "cpf", length = 11)
+    @NotNull
+    private String cpf;
 
-    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
-    private String email; // E-mail do paciente
+    private String name;
+    private String phone;
+    private String email;
 
-    @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
-    private String phone; // Número de telefone do paciente
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<Appointment> consultasAnteriores;
 
-    private String symptoms; // Sintomas do paciente
+
 
 }

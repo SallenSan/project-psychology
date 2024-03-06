@@ -29,5 +29,6 @@ public class Psychologist {
 
     @Column(nullable = false) // Define que este campo não pode ser nulo no banco de dados
     private String password; // Senha do psicólogo
+    private String role;
 
 }

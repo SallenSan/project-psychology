@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PsychologistRepository extends JpaRepository<Psychologist, Long> {
 
-    public boolean existsByCrp(String crp);
-    public boolean findByCrp(String crp);
+    public boolean existsByEmail(String email);
+    public Psychologist findByEmail(String email);
 }
