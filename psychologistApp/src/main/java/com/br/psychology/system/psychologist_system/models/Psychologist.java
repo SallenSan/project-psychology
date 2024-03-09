@@ -1,14 +1,10 @@
 package com.br.psychology.system.psychologist_system.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data // Anotação do Lombok para gerar automaticamente getters, setters, toString, equals e hashCode
+@Data// Anotação do Lombok para gerar automaticamente getters, setters, toString, equals e hashCode
 @Entity // Indica que esta classe é uma entidade JPA
-@NoArgsConstructor // Cria um construtor padrão sem argumentos
-@AllArgsConstructor // Cria um construtor que inicializa todos os campos da classe
 public class Psychologist {
 
     @Id // Indica que esta propriedade é a chave primária da entidade
