@@ -9,7 +9,11 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.List;
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
 public class Patient {
 
     @Id

@@ -1,12 +1,12 @@
 package com.br.psychology.system.psychologist_system.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Table(name = "secretaries") // Define o nome da tabela no banco de dados
 @Entity // Indica que esta classe é uma entidade JPA
